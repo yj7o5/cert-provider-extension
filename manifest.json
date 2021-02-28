@@ -1,9 +1,10 @@
 {
     "name": "Cert Provider",
-    "description": "Get certs pre-loaded from pre-configured sources for sites",
     "version": "1.0",
+    "description": "Get certs pre-loaded from pre-configured sources for sites",
     "manifest_version": 3,
     "background": {
-        "service_worker": "background.js"
-    }
+        "scripts": ["background.js"]
+    },
+    "permissions": ["webRequest"]
   }
