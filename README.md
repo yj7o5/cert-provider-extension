@@ -1,6 +1,6 @@
-## Certificates Provider Extension
+## Raven Studio Manager
 
-Raven studio to link all clusters in one portal
+Raven studio to link all clusters under one app and removing the need for requiring certificates
 
 ### Goal
 
