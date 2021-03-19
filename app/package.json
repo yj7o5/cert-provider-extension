@@ -8,7 +8,7 @@
     "start": "electron ."
   },
   "keywords": [],
-  "author": "",
+  "author": "yj7o5 <yawarjamal@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "electron": "^12.0.1"
