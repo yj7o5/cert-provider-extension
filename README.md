@@ -2,7 +2,7 @@
 
 Raven studio to link all clusters under one app and removing the need for requiring certificates
 
-Note: The code isn't the best. Right now in the process of writing a POC and prototype.
+> Note: The code isn't the best. Right now in the process of writing a POC and prototype.
 
 ### Goal
 
