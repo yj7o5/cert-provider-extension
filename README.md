@@ -2,6 +2,8 @@
 
 Raven studio to link all clusters under one app and removing the need for requiring certificates
 
+Note: The code isn't the best. Right now in the process of writing a POC and prototype.
+
 ### Goal
 
 Act as a proxy-in-the-middle self-signed certificate to authenticate between client and raven-studio while use the actual certificate between raven studio and the server
