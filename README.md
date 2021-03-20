@@ -6,7 +6,12 @@ Raven studio to link all clusters under one app and removing the need for requir
 
 ### Goal
 
-Act as a proxy-in-the-middle self-signed certificate to authenticate between client and raven-studio while use the actual certificate between raven studio and the server
+Act as a proxy-in-the-middle self-signed certificate to authenticate between client and raven-studio while use the actual certificate between raven studio and the server.
+
+### High Level Items
+- [ ] User database access managment
+- [ ] External login extension points (Google oAuth, Azure Active Directory, AWS Directory Service, Windows Active Directory)
+- [ ] "A remote desktop manager" like UI but that is as aesthetic looking as possible
 
 ### Tasks
 
