@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using AspNetCore.Proxy;
@@ -20,6 +21,8 @@ namespace Proxy.Service
         public Task ProxyCatchAll(string rest)
         {
             var clusterId = Request.Headers["cluster"].FirstOrDefault()?.Trim();
+
+            Console.WriteLine("Cluster Id", clusterId);
 
             var cluster = Clusters.FirstOrDefault(c => c.Identifier == clusterId);
 

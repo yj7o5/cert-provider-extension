@@ -1,43 +1,44 @@
-const { app, BrowserWindow } = require('electron')
+const { 
+    app, 
+    BrowserWindow, 
+    session,
+    ipcMain } = require('electron')
 
-function createWindow(url, cluster) {
-    const win = new BrowserWindow({
-        width: 600,
-        height: 800,
+function createMainWindow() {
+    const mainWindow = new BrowserWindow({
+        width: 1440,
+        height: 900,
         webPreferences: {
             webSecurity: false,
-            nodeIntegration: false,
-            partition: cluster
+            nodeIntegration: true,
+            webviewTag: true,
+            contextIsolation: false
         }
     })
 
-    console.log("setting up", url, cluster)
+    mainWindow.loadFile("./index.html")
 
-    win.loadURL(url, {
-        extraHeaders: `cluster:${cluster}`
-    })
-
-    win.once("ready-to-show", () => {
-        win.show()
-    })
-
-    win.webContents.session.webRequest.onBeforeSendHeaders((details, callback) => {
-        console.log("requesting from", cluster)
-        details.requestHeaders["cluster"] = cluster
-        callback({ cancel: false, requestHeaders: details.requestHeaders })
+    mainWindow.once("ready-to-show", () => {
+        mainWindow.show()
     })
 }
 
+ipcMain.handle("open-raven-studio", (event, arg) => {
+    console.log("[Main] received event", arg)
+
+    session.fromPartition(arg).webRequest.onBeforeSendHeaders((details, callback) => {
+        details.requestHeaders["cluster"] = arg
+        callback({ cancel: false, requestHeaders: details.requestHeaders })
+    })
+})
+
 app.whenReady().then(() => {
 
-    var url = "https://localhost:5001/studio/index.html"
-
-    createWindow(url, "C01")
-    createWindow(url, "C02")
+    createMainWindow()
 
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) {
-            createWindow()
+            createMainWindow()
         }
     })
 })
