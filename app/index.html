@@ -1,17 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Raven Studio Manager</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" href="node_modules/electron-tabs/electron-tabs.css">
+    <style type="text/css">
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            padding: 8px;
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+
+            /*fix body scroll-y caused by tooltip in table*/
+            overflow: hidden;
+        }
+
+        .wrap-container {
+            height: 100%;
+        }
+
+        .aside-menu {
+            position: relative;
+            user-select: none;
+            float:left;
+            /*max-width: 50%;*/
+        }
+
+        /*fix right container imdraggable*/
+        .right-main-container {
+            width: 90%;
+            float: right;
+        }
+    </style>
 </head>
+
 <body style="background: white;">
-    <div class="etabs-tabgroup">
-        <div class="etabs-tabs"></div>
-        <div class="etabs-buttons"></div>
-      </div>
-      <div class="etabs-views"></div>
+    <div class="wrap-container">
+        <div class="aside-menu">
+            <ul>
+                <li><a href="#" tag-id="C01">Cluster 1</a></li>
+                <li><a href="#" tag-id="C02">Cluster 2</a></li>
+                <li><a href="#" tag-id="C03">Cluster 3</a></li>
+            </ul>
+        </div>
+        <div class="right-main-container">
+            <div class="etabs-tabgroup">
+                <div class="etabs-tabs"></div>
+                <div class="etabs-buttons"></div>
+            </div>
+            <div class="etabs-views"></div>
+        </div>
+    </div>
 </body>
+
 <script src="./renderer.js"></script>
+
 </html>

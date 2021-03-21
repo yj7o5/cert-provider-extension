@@ -2,7 +2,8 @@ const {
     app, 
     BrowserWindow, 
     session,
-    ipcMain } = require('electron')
+    ipcMain
+} = require('electron')
 
 function createMainWindow() {
     const mainWindow = new BrowserWindow({
