@@ -20,4 +20,4 @@ Act as a proxy-in-the-middle self-signed certificate to authenticate between cli
 
 - [x] Setup a dumb https site to use for quick testing with certs i.e. having the browser request for certificate
 - [x] Create the proxy service to re-route all the requests to upstream server and tack on the client certificate
-- [ ] Create a simple tabbed interface for viewing multiple windows simultanously across different servers and clusters
+- [x] Create a simple tabbed interface for viewing multiple windows simultanously across different servers and clusters
