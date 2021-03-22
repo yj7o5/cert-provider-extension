@@ -10,7 +10,7 @@ Act as a proxy-in-the-middle self-signed certificate to authenticate between cli
 
 ### High Level Items
 - [ ] User database access managment
-- [ ] External login extension points (Google oAuth, Azure Active Directory, AWS Directory Service, Windows Active Directory, etc)
+- [ ] Extend to other cloud based vaults (Hashicorp, Azure Key Vault, etc)
 - [ ] "A remote desktop manager" like UI but that is as aesthetic looking as possible
 
 ### Tasks
